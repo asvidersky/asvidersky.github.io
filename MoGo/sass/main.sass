@@ -1,0 +1,583 @@
+@import "reset"
+@import "vars"
+
+%container
+  width: 1200px
+  margin: 0 auto
+
+%block
+  @extend %container
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  text-align: center
+
+%subtitle
+  font-family: $dfont
+  color: $tcolor
+  display: inline-block
+
+%title
+  font-family: $zfont
+  color: $tcolor
+  font-weight: bolder
+  display: inline-block
+  text-transform: uppercase
+  padding: 25px
+
+%decor
+  width: 60px
+  height: 3px
+  background-color: $rcolor
+
+%text
+  font-size: 15px
+  font-family: $tfont
+  color: $tcolor
+  font-weight: lighter
+  padding-top: 35px
+
+h1
+  font-size: 150px
+h2
+  font-size: 72px
+h3
+  font-size: 30px
+h4
+  font-size: 24px
+h5
+  font-size: 14px
+//header
+.header
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 80px
+  line-height: 80px
+  z-index: 10
+  &_container
+    @extend %container
+    display: flex
+    justify-content: space-between
+  &_logo
+    vertical-align: middle
+
+.menu
+  &_link
+    font-family: $zfont
+    margin-left: 55px
+    font-size: 14px
+    text-transform: uppercase
+    font-weight: 700
+    color: #fff
+  &_link:hover
+    color: $ycolor
+    border-bottom: 3px solid $ycolor
+
+//start
+.start
+  width: 100%
+  height: 100vh
+  background: url('../img/back.jpg')
+  background-size: cover
+  position: relative
+  z-index: 1
+  display: flex
+  justify-content: center
+  align-items: center
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient($rcolor, $ycolor)
+    opacity: .8
+    z-index: -1
+  &_block
+    width: 900px
+    text-align: center
+  &_subtitle
+    font-family: $dfont
+    color: #fff
+  &_title
+    font-family: $zfont
+    color: #fff
+    font-weight: bold
+  &_decoration
+    width: 60px
+    height: 3px
+    background-color: #fff
+    margin: 45px auto
+  &_btn
+    width: 160px
+    height: 40px
+    border: 3px solid #fff
+    font-size: 14px
+    line-height: 40px
+    font-family: $zfont
+    font-weight: bold
+    color: #fff
+    text-transform: uppercase
+    display: inline-block
+    text-align: center
+    transition: .5s
+  &_btn:hover
+    background-color: #fff
+    color: $rcolor
+
+//about
+.about
+  width: 100%
+  height: 650px
+  background-color: #fff
+  &_block
+    @extend %block
+    padding: 50px 0
+  &_subtitle
+    @extend %subtitle
+  &_title
+    @extend %title
+  &_decor
+    @extend %decor
+  &_text
+    font-size: 15px
+    font-family: $tfont
+    color: $tcolor
+    font-weight: lighter
+    padding-top: 35px
+.blocks
+  @extend %container
+  height: 250px
+  display: flex
+  justify-content: space-between
+.block
+  height: 100%
+  width: 380px
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+  text-align: center
+  transition: .7s
+  &_img
+    width: 100%
+    height: 100%
+  &_over
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 0%
+    height: 0%
+    transform: skewX(50%)
+    transition: .5s
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column-reverse
+    white-space: nowrap
+    opacity: 0
+  &:hover
+    margin-top: -10px
+    box-shadow: 10px 10px 0px 0px rgba(149,225,211,1)
+    .block_over
+      top: 0
+      left: 0
+      background: $grad
+      width: 100%
+      height: 100%
+      transform: none
+      opacity: 1
+  &_title
+    font-family: $zfont
+    font-weight: bold
+    font-size: 18px
+    color: #fff
+    text-transform: uppercase
+    line-height: 50px
+
+//numbers
+.numbers
+  width: 100%
+  height: 270px
+  background-color: #95e1d3
+  &_block
+    @extend %container
+    display: flex
+    justify-content: space-between
+  &_number
+    width: 20%
+    height: 270px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    border-left: 1px solid $wop
+    &:last-child
+      border-right: 1px solid $wop
+  &_title
+    font-size: 72px
+    font-weight: bold
+    font-family: $zfont
+    color: white
+    text-transform: uppercase
+    line-height: 100px
+  &_subtitle
+    font-size: 14px
+    font-weight: normal
+    font-family: $zfont
+    color: white
+    text-transform: uppercase
+
+.services
+  width: 100%
+  height: 550px
+  &_block
+    @extend %block
+    padding: 50px 0 10px
+  &_subtitle
+    @extend %subtitle
+  &_title
+    @extend %title
+  &_decor
+    @extend %decor
+  &_blocks
+    @extend %container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 160px
+    &:last-child
+      border-top: 1px solid #e5e5e5
+  &_item
+    width: 350px
+    height: 70px
+    display: flex
+    justify-content:space-around
+    flex-direction: row
+    padding: 30px
+  &_text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-left: 30px
+  &_titles
+    text-transform: uppercase
+    font-family: $zfont
+    color: #333333
+    line-height: 40px
+  &_subtitles
+    font-family: $tfont
+    color: #999999
+    font-size: 15px
+  &_img
+    padding-top: 15px
+
+//devices
+.devices
+  width: 100%
+  height: 800px
+  background: url('../img/5-back.jpg')
+  background-size: 102%
+  position: relative
+  z-index: 1
+  transition: 0.5s linear
+  &:hover
+    background-size: 100%
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(255, 255, 255, 0.8)
+    z-index: -1
+  &_block
+    @extend %block
+    padding: 50px 0 10px
+  &_subtitle
+    @extend %subtitle
+  &_title
+    @extend %title
+  &_decor
+    @extend %decor
+  &_tablet
+    width: 1200px
+    height: 850px
+    margin: 0 auto
+  &_img1
+    margin: 41px auto 0
+    display: block
+  &_img2
+    display: block
+    position: absolute
+    top: 70%
+    left: 58%
+    z-index: 150
+//whoweare
+.peoples
+  width: 100%
+  height: 1000px
+  background-color: #fff
+  &_block
+    @extend %block
+    padding: 120px 0 50px
+  &_subtitle
+    @extend %subtitle
+  &_title
+    @extend %title
+  &_decor
+    @extend %decor
+  &_text
+    @extend %text
+  &_blocks
+    @extend %container
+    height: 470px
+    display: flex
+    justify-content: space-between
+.people
+  height: 100%
+  width: 380px
+  position: relative
+  transition: .7s
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  overflow: hidden
+  &_img
+    width: 100%
+    height: 100%
+  &_over
+    position: absolute
+    width: 100%
+    height: 100%
+    transform: translateX(100%)
+    transition: .5s
+    display: flex
+    justify-content: center
+    align-items: center
+  &:hover
+    box-shadow: 10px 10px 0px 0px rgba(149,225,211,1)
+    .people_over
+      background: $grad
+      width: 100%
+      height: 100%
+      transform: none
+  &_btn
+    width: 55px
+    height: 55px
+    background-color: $ycolor
+    text-align: center
+    line-height: 55px
+    color: $rcolor
+    border-right: 1px solid rgba(243, 129, 129, 0.5)
+    transition: .5s
+    font-size: 30px
+  &_btn:last-child
+    border-right: none
+  &_btn:hover
+    background-color: $rcolor
+    color: #fff
+//hipster
+.hipsters
+  height: 240px
+  width: 100%
+  background-color: #f8f8f8
+  &_hipster
+    @extend %container
+    height: 240px
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+//pics
+.pics
+  width: 100%
+  height: 100%
+  &_block
+    @extend %block
+    padding: 60px 0 50px
+  &_subtitle
+    @extend %subtitle
+  &_title
+    @extend %title
+  &_decor
+    @extend %decor
+  &_text
+    @extend %text
+  &_t
+    text-transform: uppercase
+    font-size: 15px
+    font-family: $tfont
+  &_r
+    text-transform: uppercase
+    line-height: 30px
+    font-family: $zfont
+  &_btn
+    width: 50%
+    height: 40px
+    border: 3px solid #fff
+    font-size: 14px
+    line-height: 40px
+    font-family: $zfont
+    font-weight: bold
+    color: #fff
+    text-transform: uppercase
+    display: inline-block
+    text-align: center
+    transition: .5s
+    margin-top: 35px
+  &_btn:hover
+    background-color: #fff
+    color: $rcolor
+  &_pic
+    width: 100%
+    height: 780px
+    display: flex
+    justify-content: space-between
+  &_pic1
+    width: 50%
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &_pic2
+    width: 50%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    flex-wrap: wrap
+  &_img1
+    width: 50%
+    height: 50%
+    position: relative
+    background: url('../img/10-1.jpg') center no-repeat
+    background-size: cover
+    &:hover
+      .pics_over
+        background: $grad
+        opacity: 1
+        transform: none
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+  &_img2
+    width: 50%
+    height: 50%
+    position: relative
+    background: url('../img/10-2.jpg') center no-repeat
+    background-size: cover
+    &:hover
+      .pics_over
+        background: $grad
+        opacity: 1
+        transform: none
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+  &_img3
+    width: 50%
+    height: 50%
+    position: relative
+    background: url('../img/10-5.jpg') center no-repeat
+    background-size: cover
+    &:hover
+      .pics_over
+        background: $grad
+        opacity: 1
+        transform: none
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+  &_img4
+    width: 50%
+    height: 50%
+    position: relative
+    background: url('../img/10-6.jpg') center no-repeat
+    background-size: cover
+    &:hover
+      .pics_over
+        background: $grad
+        opacity: 1
+        transform: none
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+  &_img5
+    width: 50%
+    height: 100%
+    position: relative
+    background: url('../img/10-3.jpg') center  no-repeat
+    background-size: cover
+    &:hover
+      .pics_over
+        background: $grad
+        opacity: 1
+        transform: none
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+  &_img6
+    width: 50%
+    height: 50%
+    position: relative
+    background: url('../img/10-4.jpg') center no-repeat
+    background-size: cover
+    &:hover
+      .pics_over
+        background: $grad
+        opacity: 1
+        transform: none
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+  &_img7
+    width: 50%
+    height: 50%
+    position: relative
+    background: url('../img/10-8.jpg') center no-repeat
+    background-size: cover
+    &:hover
+      .pics_over
+        background: $grad
+        opacity: 1
+        transform: none
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+  &_over
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 0%
+    height: 0%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    color: #fff
+    font-size: 30px
+    opacity: 0
+    transform: skewX(50%)
+    transition: .7s
+    white-space: nowrap
+  &_kras
+    width: 90%
+    height: 90%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border: 1px solid #fff

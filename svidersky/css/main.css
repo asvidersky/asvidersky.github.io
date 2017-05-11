@@ -45,7 +45,7 @@ a {
   text-decoration: none; }
 
 .about_block, .services_block, .devices_block, .peoples_block, .pics_block, .header_container, .blocks, .numbers_block, .services_blocks, .peoples_blocks, .hipsters_hipster {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto; }
 
 .about_block, .services_block, .devices_block, .peoples_block, .pics_block {
